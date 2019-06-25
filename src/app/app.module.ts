@@ -9,6 +9,8 @@ import { PagesComponent } from './pages/pages.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 
+import { APP_ROUTES } from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,7 @@ import { HeaderComponent } from './shared/header/header.component';
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, APP_ROUTES,
   ],
   providers: [ArticulosService],
   bootstrap: [AppComponent]
