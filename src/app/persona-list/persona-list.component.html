@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Personas</h1>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>Estado</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of personas | async">
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.apellido}}</td>
+                    <td>{{persona.fechaNacimiento}}</td>
+                    <td>{{persona.eMail}}</td>
+                    <td>{{persona.telefonoCelular}}</td>
+                    <td>{{persona.estado}}</td>
+                    <td>{{persona.rol}}</td>
+                    <td><button (click)="deletePersonas(persona.idPersona)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

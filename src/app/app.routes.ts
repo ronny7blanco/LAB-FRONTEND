@@ -1,13 +1,18 @@
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent} from './login/login.component';
-import { PagesComponent } from './pages/pages.component';
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { PersonaListComponent } from './persona-list/persona-list.component';
+import { CreatePersonaComponent } from './create-persona/create-persona.component';
+import { NgModule } from '@angular/core';
+import { PersonaDetailsComponent } from './persona-details/persona-details.component';
 
-const appRoutes: Routes = [
-    {path: '', component : PagesComponent},
-    {path: 'login', component : LoginComponent},
-    {path: 'home', component: PagesComponent},
-    {path: '**', component: NopagefoundComponent}];
+const routes: Routes = [
+    {path: '', redirectTo: 'persona', pathMatch: 'full'},
+    {path: 'personas', component : PersonaListComponent},
+    {path: 'add', component: CreatePersonaComponent},
+    ];
 
-export const APP_ROUTES = RouterModule.forRoot(appRoutes);
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+
+export class AppRoutingModule { }
